@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Poppins', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+
+  color-scheme: light dark;
+  color: #213547; /* Cor padrão do modo claro */
+  /* Removido background-color escuro que estava causando problemas */
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Variáveis CSS para responsividade */
+  --max-width: 100vw;
+  --max-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Reset e configurações globais para prevenir áreas pretas */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Previne zoom horizontal em dispositivos móveis */
+  overflow-x: hidden;
+  overflow-y: auto; /* Permite scroll apenas quando necessário */
+  /* Garante que não haja área preta no scroll */
+  background: transparent !important;
+  background-color: transparent !important;
+  /* Melhora o scroll em dispositivos móveis */
+  -webkit-overflow-scrolling: touch;
+  /* Altura total */
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto; /* Permite scroll vertical */
+  
+  /* Remove o display flex que centraliza para evitar problemas de layout */
+  display: block;
+  
+  /* Remove qualquer background que possa estar causando áreas pretas */
+  background: transparent !important;
+  background-color: transparent !important;
+  
+  /* Melhora a performance em dispositivos móveis */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Regra específica para prevenir qualquer background escuro na div root */
+div#root {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Regra específica para a classe App */
+.App {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+#root {
+  width: 100%;
+  height: fit-content;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow-x: hidden;
+  overflow-y: auto !important; /* Permite scroll na root */
+  background: transparent !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  display: block;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.3;
+  margin: 0;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: clamp(0.4em, 2vw, 0.6em) clamp(0.8em, 3vw, 1.2em);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 500;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  
+  /* Melhora a experiência touch */
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Melhora a acessibilidade em dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+  button:hover {
+    border-color: transparent;
+  }
+  
+  button:active {
+    border-color: #646cff;
+    transform: scale(0.98);
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 767px) {
+  :root {
+    font-size: 14px;
+  }
+  
+  body {
+    /* Previne o zoom quando focalizando inputs em iOS */
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+/* Modo claro otimizado */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background: transparent;
+  }
+  
+  body {
+    background: transparent;
+    color: #213547;
+  }
+  
+  html {
+    background: transparent;
+  }
+  
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Modo escuro desabilitado - força modo claro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #213547;
+    background: transparent;
+  }
+  
+  body {
+    background: transparent;
+    color: #213547;
+  }
+  
+  html {
+    background: transparent;
+  }
+}

@@ -1,0 +1,166 @@
+/* Reset e configurações globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Previne qualquer espaço extra no root */
+#root {
+  height: fit-content !important;
+  min-height: auto !important;
+  max-height: none !important;
+  width: 100% !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+/* Previne qualquer espaço extra no App */
+.App {
+  height: fit-content !important;
+  min-height: auto !important;
+  max-height: none !important;
+  width: 100% !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overflow: visible !important;
+  display: block !important;
+}
+
+/* Configurações para tablets e totens */
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+  
+  button, input, select, textarea {
+    font-size: 18px;
+    min-height: 48px;
+    padding: 12px 20px;
+  }
+}
+
+/* Configurações para telas grandes (totens) */
+@media (min-width: 1025px) {
+  html {
+    font-size: 20px;
+  }
+  
+  button, input, select, textarea {
+    font-size: 20px;
+    min-height: 60px;
+    padding: 15px 25px;
+  }
+}
+
+/* Configurações de acessibilidade para toque */
+button, a, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Melhorias para dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+  button:hover {
+    transform: none;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Animações suaves */
+* {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E60012;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cc0010;
+}
+
+/* Prevenção de zoom acidental em dispositivos iOS */
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+  font-size: 16px;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Classe utilitária para esconder elementos visualmente mas manter acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

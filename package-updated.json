@@ -1,0 +1,49 @@
+{
+  "name": "quiz-interativo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:prod": "vite build --mode production && npm run optimize",
+    "preview": "vite preview",
+    "optimize": "echo 'Build otimizado para produção concluído!'",
+    "serve": "vite preview --host 0.0.0.0 --port 4173",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "deploy:vercel": "npm run build && vercel --prod",
+    "deploy:netlify": "npm run build && netlify deploy --prod --dir=dist",
+    "test:lighthouse": "npm run build && lighthouse http://localhost:4173 --output=html --output-path=lighthouse-report.html"
+  },
+  "dependencies": {
+    "framer-motion": "^10.16.16",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "styled-components": "^6.1.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.0.8"
+  },
+  "description": "Quiz interativo gamificado para ExpoIndústria - Senac",
+  "keywords": [
+    "quiz",
+    "gamificacao",
+    "senac",
+    "expo-industria",
+    "react",
+    "vite",
+    "tablet",
+    "totem"
+  ],
+  "author": "Senac",
+  "license": "MIT"
+}

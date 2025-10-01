@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "quiz-senac-expo-industria-2025",
   "builds": [
     {
       "src": "package.json",
@@ -10,16 +9,6 @@
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "env": {
-    "NODE_VERSION": "18"
-  },
-  "functions": {},
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

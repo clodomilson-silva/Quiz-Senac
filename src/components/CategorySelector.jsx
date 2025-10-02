@@ -299,7 +299,7 @@ const CategorySelector = ({ onCategorySelect }) => {
     },
     {
       id: 4,
-      name: "Saúde / NR",
+      name: "Saúde / NR1",
       icon: "🛡️",
       color: "#FFC107",
       description: "Normas de segurança e saúde ocupacional para um ambiente de trabalho seguro"

@@ -273,7 +273,12 @@ const ExplanationCard = styled(motion.div)`
 `;
 
 const ActionButton = styled(motion.button)`
-  background: ${props => props.variant === 'secondary' ? 'rgba(255,255,255,0.2)' : props.categoryColor || '#667eea'};
+  background: ${props => {
+    if (props.variant === 'secondary') {
+      return 'rgba(44, 62, 80, 0.9)';
+    }
+    return props.categoryColor || '#667eea';
+  }};
   color: white;
   border: none;
   padding: clamp(12px 25px, 3vw, 15px 30px);
@@ -282,7 +287,12 @@ const ActionButton = styled(motion.button)`
   font-size: clamp(0.9rem, 2vw, 1rem);
   cursor: pointer;
   backdrop-filter: blur(10px);
-  border: 2px solid ${props => props.variant === 'secondary' ? 'rgba(255,255,255,0.3)' : 'transparent'};
+  border: 2px solid ${props => {
+    if (props.variant === 'secondary') {
+      return 'rgba(255,255,255,0.2)';
+    }
+    return 'transparent';
+  }};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,11 +301,17 @@ const ActionButton = styled(motion.button)`
   min-height: 44px;
   min-width: 120px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    background: ${props => {
+      if (props.variant === 'secondary') {
+        return 'rgba(44, 62, 80, 1)';
+      }
+      return props.categoryColor || '#667eea';
+    }};
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   }
 
   &:active {
